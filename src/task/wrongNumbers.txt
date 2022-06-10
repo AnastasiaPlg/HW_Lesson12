@@ -1,0 +1,6 @@
+qwertyyt6365205
+Document numbers must starts with "docnum" or "contract"! 
+contract36gft74-368
+Wrong length! Document numbers must be composed of letters and numbers! 
+docnum1t578-4h6
+Document numbers must be composed of letters and numbers! 
