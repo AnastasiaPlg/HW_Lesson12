@@ -25,24 +25,16 @@ public class MainClass {
              FileWriter fileWriter2 = new FileWriter(rightNumbers)) {
             fileWriter1.write("");
             fileWriter2.write("");
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-        for (String line : list) {
-            if (line.length() != 15 || !(line.startsWith("docnum") || line.startsWith("contract")) || !line.matches("[a-zA-Z0-9]+")) {
-                try (FileWriter fileWriter = new FileWriter(wrongNumbers, true)) {
-                    fileWriter.write(line + "\n");
-                    fileWriter.write(DocNumberException.controlDocNumber(line) + "\n");
-                } catch (IOException e) {
-                    System.out.println(e);
-                }
-            } else {
-                try (FileWriter fileWriter = new FileWriter(rightNumbers, true)) {
-                    fileWriter.write(line + "\n");
-                } catch (IOException e) {
-                    System.out.println(e);
+            for (String line : list) {
+                if (line.length() != 15 || !(line.startsWith("docnum") || line.startsWith("contract")) || !line.matches("[a-zA-Z0-9]+")) {
+                    fileWriter1.write(line + "\n");
+                    fileWriter1.write(DocNumberException.controlDocNumber(line) + "\n");
+                } else {
+                    fileWriter2.write(line + "\n");
                 }
             }
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
 }
